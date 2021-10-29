@@ -1,14 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package aula06;
-
-/**
- *
- * @author usuario
- */
+//2ª PARTE - CRIAR 
 public class ControleRemoto {
+    //Atributos
+    private int volume;
+    private boolean ligando;
+    private boolean tocando;
+    //Métodos Especiais
+    
+    
     
 }
