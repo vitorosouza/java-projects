@@ -1,4 +1,4 @@
-package aula07;
+package ultraemojicombat;
 public class Lutador {
     //Atributos encapsulados
     private String nome;
