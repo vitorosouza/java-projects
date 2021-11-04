@@ -10,8 +10,8 @@ public class Lutador {
     private int vitorias, derrotas, empates;
     //MÉTODOS PÚBLICOS
     public void apresentar() {
-        System.out.println("-------------------------------------------");
-        System.out.println("CHEGOU A HORA! Apresentamos o lutador" + this.getNome());
+        System.out.println("-------------------------------------------------");
+        System.out.println("CHEGOU A HORA! Apresentamos o lutador " + this.getNome() + "!");
         System.out.println("Origem: " + this.getNacionalidade());
         System.out.println(this.getIdade() + " anos");
         System.out.println(this.getAltura() + " m de altura");
@@ -23,9 +23,9 @@ public class Lutador {
     //Como se fosse uma apresentação mais suscinta das informações do lutador.
     public void status() {
         System.out.println(this.getNome() + " é um peso " + this.getCategoria());
-        System.out.println(this.getVitorias() + "vitórias");
-        System.out.println(this.getDerrotas() + "derrotas");
-        System.out.println(this.getEmpates() + "empates");
+        System.out.println(this.getVitorias() + " vitórias");
+        System.out.println(this.getDerrotas() + " derrotas");
+        System.out.println(this.getEmpates() + " empate(s)");
     }
 
     public void ganharLuta() {
@@ -44,6 +44,7 @@ public class Lutador {
     //Construtor
     public Lutador(String no, String na, int id, float al,
         float pe, int vi, int de, int em) {
+        
         this.nome = no;
         this.nacionalidade = na;
         this.idade = id;
