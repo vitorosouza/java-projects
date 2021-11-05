@@ -30,9 +30,9 @@ public class Luta {
     }
     public void lutar(){
         if(this.aprovada){
-            System.out.println("### DESAFIADO ###");
+            System.out.println("########## DESAFIADO ##########");
             this.desafiado.apresentar();
-            System.out.println("### DESAFIANTE ###");
+            System.out.println("######### DESAFIANTE ##########");
             this.desafiante.apresentar();
             
             //Criando um objeto do tipo Random
@@ -62,7 +62,7 @@ public class Luta {
             }
                 System.out.println("===================================");
         } else {
-            System.out.println("A luta não pode acontencer!");
+            System.out.println("A luta não pode acontecer!");
         }
     }
     //Métodos Especiais
