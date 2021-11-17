@@ -3,8 +3,13 @@
 /ResolucaoTela/ResolucaoTela/build/
 /IdiomaSistema/nbproject/private/
 /IdiomaSistema/build/
+<<<<<<< HEAD
 /OlaMundoSwing/nbproject/private/
 /OlaMundoSwing/build/
 /OlaMundoJavaFX/nbproject/private/
 /OlaMundoJavaFX/build/
 /OlaMundoJavaFX/dist/
+=======
+/OperadoresSwing/nbproject/private/
+/OperadoresSwing/build/
+>>>>>>> 536c98ba270e3b299d5d9119393fc9ea5f509f82
