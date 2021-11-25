@@ -35,6 +35,8 @@ public class TelaParImpar extends javax.swing.JFrame {
 
         jLabel1.setText("Valor");
 
+        txtValor.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+
         btnVerificar.setText("Verificar");
         btnVerificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,13 +56,13 @@ public class TelaParImpar extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblResultado)
                             .addComponent(btnVerificar))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,8 +82,13 @@ public class TelaParImpar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
-        //Pega o valor que tá no txtValor e converte 
+        //Pega o valor que tá no txtValor e converte para int
         int v = Integer.parseInt(txtValor.getText());
+        if (v%2 == 0){
+            lblResultado.setText("PAR");
+        } else {
+            lblResultado.setText("IMPAR");
+        }
         
     }//GEN-LAST:event_btnVerificarActionPerformed
 

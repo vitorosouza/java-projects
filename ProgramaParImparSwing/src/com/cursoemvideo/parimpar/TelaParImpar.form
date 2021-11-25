@@ -29,7 +29,7 @@
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="txtValor" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtValor" min="-2" pref="81" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
@@ -39,7 +39,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -67,6 +67,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtValor">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnVerificar">
       <Properties>
