@@ -15,11 +15,8 @@ public class Aluno {
     private String nomeEscola;
     private String serieMatriculado;
     
-    //--------------------------------------------------------
     //Instanciando um objeto dentro do outro
     private Disciplina disciplina = new Disciplina();
-    //--------------------------------------------------------
-    
     
     public Disciplina getDisciplina() {
         return disciplina;
@@ -31,7 +28,8 @@ public class Aluno {
     
     //METODOS PERSONALIZADOS
     public double getMediaNota(){
-        return  ((disciplina.getNota1() + disciplina.getNota2() +disciplina.getNota3() + disciplina.getNota4())/4);
+        return  ((disciplina.getNota1() + disciplina.getNota2() + 
+                  disciplina.getNota3() + disciplina.getNota4()) / 4);
     }
     
     public boolean getAlunoAprovado(){
