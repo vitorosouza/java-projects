@@ -15,10 +15,12 @@ public class Aluno {
     private String nomeEscola;
     private String serieMatriculado;
     
-    
+    //--------------------------------------------------------
     //Instanciando um objeto dentro do outro
     private Disciplina disciplina = new Disciplina();
     //--------------------------------------------------------
+    
+    
     public Disciplina getDisciplina() {
         return disciplina;
     }
@@ -26,22 +28,11 @@ public class Aluno {
     public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
     }
-    //---------------------------------------------------------
-    
-    
-    
-    //CONSTRUTOR
-    public Aluno() {
-        
-    }
     
     //METODOS PERSONALIZADOS
     public double getMediaNota(){
-        return (disciplina.getNota1() + disciplina.getNota2() +
-                disciplina.getNota3() + disciplina.getNota4()/4);
-        
+        return  ((disciplina.getNota1() + disciplina.getNota2() +disciplina.getNota3() + disciplina.getNota4())/4);
     }
-    
     
     public boolean getAlunoAprovado(){
         double media = this.getMediaNota();
@@ -50,7 +41,6 @@ public class Aluno {
         } else {
             return false;
         }
-        
     }
     
     public String getAlunoAprovado2(){
@@ -142,14 +132,17 @@ public class Aluno {
     public void setSerieMatriculado(String serieMatriculado) {
         this.serieMatriculado = serieMatriculado;
     }
-
-
     
-    //toString()
+    //toString() 
+    //Nota que no disciplina, ele ta mostrando o objeto disciplina todo, porem para que apareça e necessario criar um toString() dentro do objeto Disciplina para que apareça
+    @Override
+    public String toString() {
+        return "Aluno{" + "nome=" + nome + ", idade=" + idade + ", registroGeral=" + registroGeral + ", dataNascimento=" + dataNascimento 
+                + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" 
+                + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + serieMatriculado + ", disciplina=" + disciplina + '}';
+    }
     
-    
-    
-    //Equals() e hashCode()
+    //Equals() e hashCode() para que o programa diferencie os objetos por nome e CPF
     @Override
     public int hashCode() {
         int hash = 3;

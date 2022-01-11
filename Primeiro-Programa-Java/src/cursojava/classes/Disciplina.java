@@ -77,7 +77,6 @@ public class Disciplina {
         this.nota4 = nota4;
     }
     
-    
     //equals() E hashCode()
     @Override
     public int hashCode() {
@@ -143,7 +142,10 @@ public class Disciplina {
         return true;
     }
     
-    
-    
-    
+    //toString() do objeto Disciplina para poder mostrar as disciplinas e as notas 
+    @Override
+    public String toString() {
+        return "Disciplina{" + "disciplina1=" + disciplina1 + ", nota1=" + nota1 + ", disciplina2=" + disciplina2 + ", nota2=" + nota2 
+                + ", disciplina3=" + disciplina3 + ", nota3=" + nota3 + ", disciplina4=" + disciplina4 + ", nota4=" + nota4 + '}';
+    }
 }
