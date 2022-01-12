@@ -1,5 +1,8 @@
 package cursojava.classes;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Aluno {
@@ -15,21 +18,31 @@ public class Aluno {
     private String nomeEscola;
     private String serieMatriculado;
     
-    //Instanciando um objeto dentro do outro
-    private Disciplina disciplina = new Disciplina();
+    //Instanciando um objeto dentro do outro (isso para o metodo antigo, o novo sera para implementar uma lista
+    /*private Disciplina disciplina = new Disciplina();*/
     
-    public Disciplina getDisciplina() {
-        return disciplina;
+    //Lista de Disciplinas do Aluno
+    private List <Disciplina> disciplinas = new ArrayList<Disciplina>();
+
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
     }
 
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
     }
+    
     
     //METODOS PERSONALIZADOS
     public double getMediaNota(){
-        return  ((disciplina.getNota1() + disciplina.getNota2() + 
-                  disciplina.getNota3() + disciplina.getNota4()) / 4);
+        
+        double somaNotas = 0.0;
+        
+        for (Disciplina disciplina : disciplinas){
+            somaNotas += disciplina.getNota();
+        }
+        
+        return  somaNotas / disciplinas.size();
     }
     
     public boolean getAlunoAprovado(){
@@ -137,7 +150,7 @@ public class Aluno {
     public String toString() {
         return "Aluno{" + "nome=" + nome + ", idade=" + idade + ", registroGeral=" + registroGeral + ", dataNascimento=" + dataNascimento 
                 + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", dataMatricula=" 
-                + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + serieMatriculado + ", disciplina=" + disciplina + '}';
+                + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + serieMatriculado + '}';
     }
     
     //Equals() e hashCode() para que o programa diferencie os objetos por nome e CPF
