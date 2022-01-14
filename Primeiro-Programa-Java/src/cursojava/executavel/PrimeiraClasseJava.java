@@ -8,7 +8,8 @@ public class PrimeiraClasseJava {
 
     public static void main(String[] args) {
         
-        //ENTRADA DE DADOS
+        //ENTRADA DE DADOS 
+        /*
         String nome = JOptionPane.showInputDialog("Qual o nome do aluno?");
         String idade = JOptionPane.showInputDialog("Qual a sua idade?");
         String dataNascimento = JOptionPane.showInputDialog("Qual sua data de nascimento?");
@@ -19,13 +20,14 @@ public class PrimeiraClasseJava {
         String dataMatricula = JOptionPane.showInputDialog("Qual a data de matricula?");
         String serie = JOptionPane.showInputDialog("Qual a seria matriculada?");
         String escola = JOptionPane.showInputDialog("Qual o nome da escola?");
-        
+        */
         // new Aluno() e uma instancia (Criacao de Objeto) e a variavel aluno1 e uma referencia para o objeto Aluno
         Aluno aluno1 = new Aluno(); 
         
         
         //BASICAMENTE, COMO CRIAMOS O OBJETO DISCIPLINA, A GENTE RESGATA O OBJETO E SETA O ATRIBUTO
         //Settando (passando) os dados
+        /*
         aluno1.setNome(nome);
         aluno1.setIdade(Integer.valueOf(idade));
         aluno1.setDataNascimento(dataNascimento);
@@ -36,7 +38,7 @@ public class PrimeiraClasseJava {
         aluno1.setDataMatricula(dataMatricula);
         aluno1.setSerieMatriculado(serie);
         aluno1.setNomeEscola(escola);
-        
+        */
         //RECEBER DE FORMA DINAMICA AS MATERIAS E NOTAS
         for (int pos = 1; pos <= 4; pos++){
             String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina " + pos +"?"); //Pede o nome das disciplinas
@@ -49,14 +51,20 @@ public class PrimeiraClasseJava {
             aluno1.getDisciplinas().add(disciplina);
         }
        
+        //REMOVER DISCIPLINAS---------------------------------------------------------------------------------
         int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina? ");
         
         if(escolha == 0){
             String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina? 1, 2, 3 ou 4?");
-            aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover));
-            
+            //Agora o código está correto, pois o .remove está ccomo int e o .parseInt foi posto em ação. [2]
+            aluno1.getDisciplinas().remove(Integer.parseInt(disciplinaRemover) - 1);
+            System.out.println(aluno1.getDisciplinas().size());
+            //O .remove está para tirar um Objeto e não um int && Integer.valueOf pode ser substituído por Integer.parseInt [1]
+            //aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover));
         }
         
+        
+        //------------------------------------------------------------------------------------------------------
         System.out.println(aluno1.toString());
         System.out.println("Media do aluno: " + aluno1.getMediaNota());
         System.out.println("Resultado: " + aluno1.getAlunoAprovado2());
