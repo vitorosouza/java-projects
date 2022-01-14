@@ -52,18 +52,24 @@ public class PrimeiraClasseJava {
         }
        
         //REMOVER DISCIPLINAS---------------------------------------------------------------------------------
-        int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina? ");
+        int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
         
-        if(escolha == 0){
-            String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina? 1, 2, 3 ou 4?");
-            //Agora o código está correto, pois o .remove está ccomo int e o .parseInt foi posto em ação. [2]
-            aluno1.getDisciplinas().remove(Integer.parseInt(disciplinaRemover) - 1);
-            System.out.println(aluno1.getDisciplinas().size());
-            //O .remove está para tirar um Objeto e não um int && Integer.valueOf pode ser substituído por Integer.parseInt [1]
-            //aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover));
+        if(escolha == 0){ //Opção SIM é 0 (zero)
+            
+            int continuarRemover = 0;
+            int posicao = 1;
+            
+            while(continuarRemover == 0){
+                
+                String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina? 1, 2, 3 ou 4?");
+                aluno1.getDisciplinas().remove(Integer.parseInt(disciplinaRemover) - posicao);//Agora o código está correto, pois o .remove está ccomo int e o .parseInt foi posto em ação. [2]
+                posicao ++;
+                continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover?");
+            
+            
+                //aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover));//O .remove está para tirar um Objeto e não um int && Integer.valueOf pode ser substituído por Integer.parseInt [1]
+            }
         }
-        
-        
         //------------------------------------------------------------------------------------------------------
         System.out.println(aluno1.toString());
         System.out.println("Media do aluno: " + aluno1.getMediaNota());
