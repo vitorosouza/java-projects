@@ -1,37 +1,36 @@
 package cursojava.classes;
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Aluno {
+import cursojava.constantes.StatusAluno;
+
+public class Aluno extends Pessoa{
     // Atributos da classe 
-    private String nome;
-    private int idade;
-    private String registroGeral;
-    private String dataNascimento;
-    private String numeroCPF;
-    private String nomeMae;
-    private String nomePai;
     private String dataMatricula;
     private String nomeEscola;
     private String serieMatriculado;
-    
-    //Instanciando um objeto dentro do outro (isso para o metodo antigo, o novo sera para implementar uma lista
-    /*private Disciplina disciplina = new Disciplina();*/
-    
-    //Lista de Disciplinas do Aluno
-    private List <Disciplina> disciplinas = new ArrayList<Disciplina>();
+    private List <Disciplina> disciplinas = new ArrayList<Disciplina>(); //Lista de Disciplinas do Aluno
 
-    public List<Disciplina> getDisciplinas() {
+    /*
+    public Aluno(String nomePadrao) {
+    	super.nome = nomePadrao;
+		
+	}
+    
+    public Aluno(String nomePadrao, int idadePadrao) {
+    	super.nome = nomePadrao;
+    	super.idade = idadePadrao;
+    }
+    */
+
+	public List<Disciplina> getDisciplinas() {
         return disciplinas;
     }
 
     public void setDisciplinas(List<Disciplina> disciplinas) {
         this.disciplinas = disciplinas;
     }
-    
     
     //METODOS PERSONALIZADOS
     public double getMediaNota(){
@@ -41,29 +40,19 @@ public class Aluno {
         for (Disciplina disciplina : disciplinas){
             somaNotas += disciplina.getNota();
         }
-        
         return  somaNotas / disciplinas.size();
-    }
-    
-    public boolean getAlunoAprovado(){
-        double media = this.getMediaNota();
-        if (media >= 70){
-           return true;
-        } else {
-            return false;
-        }
     }
     
     public String getAlunoAprovado2(){
         double media = this.getMediaNota();
         if (media >= 50){
             if(media >= 70){
-               return "Aluno Aprovado!";  
+               return StatusAluno.APROVADO;  
             } else {
-                return "Aluno em Recuperação";
+                return StatusAluno.RECUPERACAO;
             }
         } else {
-            return "Aluno Reprovado";
+            return StatusAluno.REPROVADO;
         }
     } 
     
@@ -149,7 +138,6 @@ public class Aluno {
     }
     
     //toString() 
-    //Nota que no disciplina, ele ta mostrando o objeto disciplina todo, porem para que apareça e necessario criar um toString() dentro do objeto Disciplina para que apareça
     @Override
     public String toString() {
         return "Aluno{" + "nome=" + nome + ", idade=" + idade + ", registroGeral=" + registroGeral + ", dataNascimento=" + dataNascimento 
@@ -157,7 +145,7 @@ public class Aluno {
                 + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado=" + serieMatriculado + '}';
     }
     
-    //Equals() e hashCode() para que o programa diferencie os objetos por nome e CPF
+    //Equals() e hashCode() para que o programa diferencie os objetos por nome e CPF, nesse caso
     @Override
     public int hashCode() {
         int hash = 3;
