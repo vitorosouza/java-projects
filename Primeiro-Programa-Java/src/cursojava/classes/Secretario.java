@@ -1,10 +1,18 @@
 package cursojava.classes;
 
-public class Secretario extends Pessoa {
+import cursojava.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso {
 	//Atributos
-	protected String registro;
-	protected String nivelCargo;
-	protected String experiencia;
+	private String registro;
+	private String nivelCargo;
+	private String experiencia;
+	
+	private String login;
+	private String senha;
+	
+	
+	
 	
 	//Métodos GETTERS e SETTERS
 	public String getRegistro() {
@@ -26,6 +34,19 @@ public class Secretario extends Pessoa {
 		this.experiencia = experiencia;
 	}
 	
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
 	//toString()
 	@Override
 	public String toString() {
@@ -34,7 +55,28 @@ public class Secretario extends Pessoa {
 				+ dataNascimento + ", numeroCPF=" + numeroCPF + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 	}
 	
+	@Override //Identifica método sobrescrito
+    public boolean pessoaMaiorIdade() {
+    	return idade >= (int) 18;
+	}
 	
+	//Retorna uma resposta de acordo com a idade
+	public String msgMaiorIdade() {
+    	return this.pessoaMaiorIdade() ? "Obaaa! O aluno é maior de idade!" : "Poxa... você é menor de idade!";
+    }
+	
+	//Sobreescreve o método do salário, já que cada um pega a herança de Pessoa
+	@Override
+	public double salario() {
+		return 1800.68 * 0.9;
+	}
+	
+	//Retorna TRUE caso login e senha seja admin, senão FALSO
+	@Override
+	public boolean autenticar() {
+		
+		return login.equals("admin") && senha.equals("admin");
+	}
 	
 	
 	

@@ -2,7 +2,9 @@ package cursojava.executavel;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
+import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 import javax.swing.JOptionPane;
 import java.util.List;
@@ -16,7 +18,13 @@ public class PrimeiraClasseJava {
     	String login = JOptionPane.showInputDialog("Informe o login");
     	String senha = JOptionPane.showInputDialog("Informe a senha");
     	
-    	if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+    	//Referência direta à interface, já dentro do criador de objeto do tipo Secretario, eu já tenha os atributos e métodos necessários
+    	PermitirAcesso secretario = new Secretario();
+    	 
+    	
+    	
+    	
+    	if (secretario.autenticar()) { //Se TRUE o secretario acessa, se FALSE não acessa!
     		
     	
     			
@@ -27,7 +35,7 @@ public class PrimeiraClasseJava {
         
         
         
-    		for (int qtd = 1; qtd<=5; qtd++){
+    		for (int qtd = 1; qtd<=2; qtd++){
             
     			//ENTRADA DE DADOS 
     			String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd +"?"); /*

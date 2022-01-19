@@ -1,7 +1,7 @@
 package cursojava.classes;
 
 //CLASSE PAI/MASTER/SUPERCLASSE/
-public class Pessoa {
+public abstract class Pessoa {
 
 	//Atributos
 	protected String nome;
@@ -12,6 +12,9 @@ public class Pessoa {
 	protected String nomeMae;
 	protected String nomePai;
 	
+	//Método Abstrato (método tem que ser declarado por todas as classes filhas)
+	public abstract double salario();
+	
 	//Métodos GETTERS e SETTERS
 	public String getNome() {
 		return nome;
@@ -19,7 +22,7 @@ public class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getIdade() {
+	public int getIdade()  {
 		return idade;
 	}
 	public void setIdade(int idade) {
@@ -55,5 +58,14 @@ public class Pessoa {
 	public void setNomePai(String nomePai) {
 		this.nomePai = nomePai;
 	}
+	
+	public boolean pessoaMaiorIdade() {
+		return idade >= (int) 18;
+	}
+	
+	public String msgMaiorIdade() {
+    	return this.pessoaMaiorIdade() ? "Obaaa! O aluno é maior de idade!" : "Poxa... você é menor de idade!";
+    }
+	
 	
 }
