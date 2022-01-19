@@ -19,43 +19,31 @@ public class PrimeiraClasseJava {
     	String senha = JOptionPane.showInputDialog("Informe a senha");
     	
     	//Referência direta à interface, já dentro do criador de objeto do tipo Secretario, eu já tenha os atributos e métodos necessários
-    	PermitirAcesso secretario = new Secretario();
-    	 
-    	
-    	
-    	
-    	if (secretario.autenticar()) { //Se TRUE o secretario acessa, se FALSE não acessa!
-    		
-    	
+    	if (new Secretario().autenticar(login, senha)) { //Se TRUE o secretario acessa, se FALSE não acessa!
     			
     		List<Aluno> alunos = new ArrayList<Aluno>();
         
     		//È uma lista que dentro dela temos uma chave que identifica uma sequencia de valores também
     		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
         
-        
-        
     		for (int qtd = 1; qtd<=2; qtd++){
-            
     			//ENTRADA DE DADOS 
     			String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd +"?"); /*
-        	String idade = JOptionPane.showInputDialog("Qual a sua idade?");
-        	String dataNascimento = JOptionPane.showInputDialog("Qual sua data de nascimento?");
-        	String rg = JOptionPane.showInputDialog("Qual o seu RG?");
-        	String cpf = JOptionPane.showInputDialog("Qual o seu CPF?");
-        	String mae = JOptionPane.showInputDialog("Qual o nome da sua mae?");
-        	String pai = JOptionPane.showInputDialog("Qual o nome do seu pai?");
-        	String dataMatricula = JOptionPane.showInputDialog("Qual a data de matricula?");
-        	String serie = JOptionPane.showInputDialog("Qual a seria matriculada?");
-        	String escola = JOptionPane.showInputDialog("Qual o nome da escola?");
-    			 */
+        		String idade = JOptionPane.showInputDialog("Qual a sua idade?");
+        		String dataNascimento = JOptionPane.showInputDialog("Qual sua data de nascimento?");
+        		String rg = JOptionPane.showInputDialog("Qual o seu RG?");
+        		String cpf = JOptionPane.showInputDialog("Qual o seu CPF?");
+        		String mae = JOptionPane.showInputDialog("Qual o nome da sua mae?");
+        		String pai = JOptionPane.showInputDialog("Qual o nome do seu pai?");
+        		String dataMatricula = JOptionPane.showInputDialog("Qual a data de matricula?");
+        		String serie = JOptionPane.showInputDialog("Qual a seria matriculada?");
+        		String escola = JOptionPane.showInputDialog("Qual o nome da escola?");
+    			 	*/
+    			
     			// new Aluno() e uma instancia (Criacao de Objeto) e a variavel aluno1 e uma referencia para o objeto Aluno
     			Aluno aluno1 = new Aluno(); 
-        
-        
-    			//BASICAMENTE, COMO CRIAMOS O OBJETO DISCIPLINA, A GENTE RESGATA O OBJETO E SETA O ATRIBUTO
+    			
     			//Settando (passando) os dados
-        
     			aluno1.setNome(nome);	/*
         		aluno1.setIdade(Integer.valueOf(idade));
         		aluno1.setDataNascimento(dataNascimento);
