@@ -19,13 +19,8 @@ public class PrimeiraClasseJava {
     	String login = JOptionPane.showInputDialog("Informe o login");
     	String senha = JOptionPane.showInputDialog("Informe a senha");
     	
-    	
-    	PermitirAcesso permitirAcesso = new Secretario(login, senha);
-    	
-    	
     	//Referência direta à interface, já dentro do criador de objeto do tipo Secretario, eu já tenha os atributos e métodos necessários
-    	if (new FuncaoAutenticacao(permitirAcesso).autenticar()) { //Vou travar o contrato para autorizar somente quem tem autorização
-    		
+    	if (new FuncaoAutenticacao(new Secretario(login, senha)).autenticar()) { //Vou travar o contrato para autorizar somente quem tem autorização
     			
     		List<Aluno> alunos = new ArrayList<Aluno>();
         
