@@ -3,6 +3,7 @@ package cursojava.executavel;
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
 import cursojava.interfaces.PermitirAcesso;
 
@@ -18,8 +19,13 @@ public class PrimeiraClasseJava {
     	String login = JOptionPane.showInputDialog("Informe o login");
     	String senha = JOptionPane.showInputDialog("Informe a senha");
     	
+    	
+    	PermitirAcesso permitirAcesso = new Secretario(login, senha);
+    	
+    	
     	//Referência direta à interface, já dentro do criador de objeto do tipo Secretario, eu já tenha os atributos e métodos necessários
-    	if (new Secretario().autenticar(login, senha)) { //Se TRUE o secretario acessa, se FALSE não acessa!
+    	if (new FuncaoAutenticacao(permitirAcesso).autenticar()) { //Vou travar o contrato para autorizar somente quem tem autorização
+    		
     			
     		List<Aluno> alunos = new ArrayList<Aluno>();
         

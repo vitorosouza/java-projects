@@ -8,12 +8,30 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	private String nivelCargo;
 	private String experiencia;
 	
-	//CONTRATO DE AUTENTICAÇÃO
+	private String login;
+	private String senha;
+	
+	public Secretario(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+	}
+	
+	public Secretario() {
+		
+	}
+	
 	//Retorna TRUE caso login e senha seja admin, senão FALSO
-		@Override
-		public boolean autenticar(String login, String senha) {
-			return login.equals("admin") && senha.equals("admin");
+	@Override
+	public boolean autenticar(String login, String senha) {
+			this.login = login;
+			this.senha = senha;
+			return autenticar();
 		}
+	
+	@Override
+	public boolean autenticar() {
+		return login.equals("admin") && senha.equals("admin");
+	}
 	
 	//Métodos GETTERS e SETTERS
 	public String getRegistro() {
@@ -58,6 +76,7 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	public double salario() {
 		return 1800.68 * 0.9;
 	}
+
 	
 	
 	
