@@ -12,7 +12,7 @@ public class ArrayVetor {
 		
 		//Criação do Aluno
 		Aluno aluno = new Aluno();
-		aluno.setNome("Alex Vitoriano");
+		aluno.setNome("Vitor Souza");
 		aluno.setNomeEscola("CEAI");
 		
 		//Criação das Disciplinas
@@ -29,7 +29,23 @@ public class ArrayVetor {
 		//Add a disciplina na lista de disciplinas do aluno
 		aluno.getDisciplinas().add(disciplina2);
 		
+		Aluno[] arrayAlunos = new Aluno[1];
 		
+		arrayAlunos[0] = aluno;
+		
+		for (int pos = 0; pos < arrayAlunos.length; pos ++) {
+			System.out.println("Nome do aluno é: " + arrayAlunos[pos].getNome());
+			
+			for (Disciplina d : arrayAlunos[pos].getDisciplinas()) {
+				System.out.println("Nome da disciplina é: " + d.getDisciplina());
+				
+				for (int posnota = 0; posnota < d.getNota().length; posnota ++) {
+					System.out.println("A nota número " + (posnota + 1) + " é igual = "+ d.getNota()[posnota]);
+				}
+				
+			}
+			
+		}
 		
 		
 		
