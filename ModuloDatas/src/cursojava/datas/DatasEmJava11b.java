@@ -22,7 +22,8 @@ public class DatasEmJava11b {
 			for (int data = 1; data <= 12; data ++) {
 				dataBase = dataBase.plusMonths(1);
 				
-				System.out.println("Data de vencimento do boleto: " + dataBase.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " do mês " + data);
+				System.out.println("Data de vencimento do boleto: " 
+				+ dataBase.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + " do mês " + data);
 			}
 			
 		}
