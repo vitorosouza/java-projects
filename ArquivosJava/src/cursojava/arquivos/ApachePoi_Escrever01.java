@@ -11,11 +11,11 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
 
-public class ApachePoi_Escrever {
+public class ApachePoi_Escrever01 {
 
 	public static void main(String[] args) throws Exception {
 		//Cria o arquivo
-		File file = new File("C:\\workspace\\java-projects\\ArquivosJava\\src\\cursojava\\arquivos\\arquivo.xls");
+		File file = new File("C:\\workspace\\java-projects\\ArquivosJava\\src\\cursojava\\arquivos\\arquivo_excel.xls");
 		//Se não existe...
 		if(!file.exists()) {
 			file.createNewFile();//... irá criar um novo arquivo.
@@ -32,7 +32,7 @@ public class ApachePoi_Escrever {
 				pessoa2.setNome("Alcindo Lobo");
 				
 				Pessoa pessoa3 = new Pessoa();
-				pessoa3.setEmail("moinho@gmail.com");
+				pessoa3.setEmail("moinhoge@gmail.com");
 				pessoa3.setIdade(39);
 				pessoa3.setNome("Maria do Rosario");
 				//FIM DA LISTA DE PESSOAS

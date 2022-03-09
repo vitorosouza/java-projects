@@ -12,10 +12,10 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
 
-public class ApachePoi_Ler {
+public class ApachePoi_Ler02 {
 
 	public static void main(String[] args) throws Exception {
-		FileInputStream entrada = new FileInputStream(new File("C:\\workspace\\java-projects\\ArquivosJava\\src\\cursojava\\arquivos\\arquivo.xls"));
+		FileInputStream entrada = new FileInputStream(new File("C:\\workspace\\java-projects\\ArquivosJava\\src\\cursojava\\arquivos\\arquivo_excel.xls"));
 		
 		HSSFWorkbook hssfWorkbook = new HSSFWorkbook(entrada);//Prepara a entrada do arquivo excel para ler
 		HSSFSheet planilha = hssfWorkbook.getSheetAt(0); //Pega a primeira planilha do nosso arquivo excel

@@ -11,11 +11,11 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 
 
-public class ApachePoi_Adicionar {
+public class ApachePoi_Adicionar03 {
 
 	public static void main(String[] args) throws Exception {
 		
-		File file = new File("C:\\workspace\\java-projects\\ArquivosJava\\src\\cursojava\\arquivos\\arquivo.xls"); //Deixa o arquivo em stand-by
+		File file = new File("C:\\workspace\\java-projects\\ArquivosJava\\src\\cursojava\\arquivos\\arquivo_excel.xls"); //Deixa o arquivo em stand-by
 		FileInputStream entrada = new FileInputStream(file); //Estancia o objeto "entrada"
 		
 		HSSFWorkbook hssfWorkbook = new HSSFWorkbook(entrada); //Prepara a entrada do arquivo Excel
@@ -29,7 +29,7 @@ public class ApachePoi_Adicionar {
 			int numeroCelulas = linha.getPhysicalNumberOfCells(); //Pega a quantidade de células 
 			
 			Cell cell = linha.createCell(numeroCelulas); //Criar uma nova célula na linha 
-			cell.setCellValue("5.487,27"); //Seta o valor da nova célula
+			cell.setCellValue("8.658,78"); //Seta o valor da nova célula
 			
 		}
 		
